@@ -39,17 +39,9 @@ FixNamespaceComments: true
 IncludeBlocks: Merge
 IncludeCategories:
   - Regex:        '^<([A-Za-z0-9\/-_])+>' # std system headers have the lowest priority
-    Priority:     5
+    Priority:     3
   #  - Regex:        '^<other/'
-  #    Priority:     4
-  - Regex:        '^<(peripherals|ue2020)+/'
-    Priority:     3
-  - Regex:        '^"(peripherals|ue2020)+/'
-    Priority:     3
-  - Regex:        '^<(runtime|ue2020)+/'
-    Priority:     2
-  - Regex:        '^"(runtime|ue2020)+/'
-    Priority:     2
+  #    Priority:     2
   - Regex:        '^"([A-Za-z0-9.\/-_])+"' # Local headers have the highest priority
     Priority:     1
 IndentCaseLabels: true

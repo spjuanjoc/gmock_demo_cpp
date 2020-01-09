@@ -29,7 +29,7 @@ public:
   }
 };
 
-// Fixture test 0
+// Fixture test 1
 // callShow() fixture method that calls Interface method
 TEST_F(TestFixtureIDisplay, TestCallshowFix)
 {
@@ -42,7 +42,7 @@ TEST_F(TestFixtureIDisplay, TestCallshowFix)
   //  EXPECT_TRUE(true);
 }
 
-// Fixture test 1
+// Fixture test 2
 // Start() with no args
 TEST_F(TestFixtureIDisplay, TestStartFix)
 {
@@ -50,7 +50,7 @@ TEST_F(TestFixtureIDisplay, TestStartFix)
   mockObject->Start();  // expected call
 }
 
-// Fixture test 2
+// Fixture test 3
 // Show() with one arg
 TEST_F(TestFixtureIDisplay, TestShowFix)
 {
@@ -63,7 +63,7 @@ TEST_F(TestFixtureIDisplay, TestShowFix)
   //  impObj.Show(20); // does not count as call, implementation should not be used here
 }
 
-// Fixture test 3
+// Fixture test 4
 // const GetX() with no args that returns int
 TEST_F(TestFixtureIDisplay, TestGetFix)
 {
@@ -74,7 +74,7 @@ TEST_F(TestFixtureIDisplay, TestGetFix)
   EXPECT_EQ(got, 5);
 }
 
-// Fixture test 4
+// Fixture test 5
 // const GetX() with no args that returns int
 TEST_F(TestFixtureIDisplay, TestDrawFix)
 {
