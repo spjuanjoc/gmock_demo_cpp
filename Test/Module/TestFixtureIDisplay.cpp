@@ -1,33 +1,24 @@
 //
 // Created by juan.castellanos on 8/01/20.
 //
+#include "TestFixtureIDisplay.h"
 #include "ImplementationDisplay.h"
 #include "MockInterfaceDisplay.h"
 #include <iostream>
-#include <gmock/gmock.h>
-#include <gtest/gtest.h>
 
-/// Fixture
-class TestFixtureIDisplay : public ::testing::Test
+void TestFixtureIDisplay::callShow(InterfaceDisplay* instance)
 {
-public:
-  // 1. Create mock object
-  MockInterfaceDisplay* mockObject = nullptr;
-
-  static void callShow(InterfaceDisplay* instance)
-  {
-    instance->Show(100);
-    std::cout << "Show() called from TestFixtureIDisplay\n";
-  }
-  void SetUp() override
-  {
-    mockObject = new MockInterfaceDisplay();
-  }
-  void TearDown() override
-  {
-    delete mockObject;
-  }
-};
+  instance->Show(100);
+  std::cout << "Show() called from TestFixtureIDisplay\n";
+}
+void TestFixtureIDisplay::SetUp()
+{
+  mockObject = new MockInterfaceDisplay();
+}
+void TestFixtureIDisplay::TearDown()
+{
+  delete mockObject;
+}
 
 // Fixture test 1
 // callShow() fixture method that calls Interface method
@@ -80,6 +71,13 @@ TEST_F(TestFixtureIDisplay, TestDrawFix)
 {
   //  EXPECT_CALL(*mockObject, Draw()).Times(testing::AtLeast(1)); // not in the interface, can't be called in Mock
 }
+
+//TEST_F(TestFixtureIDisplay, TestCallShowFix)
+//{
+//  InterfaceDisplay* instance = new InterfaceDisplay();
+//  TestFixtureIDisplay::callShow(instance);
+////  EXPECT_CALL(*mockObject, Draw()).Times(testing::AtLeast(1)); // not in the interface, can't be called in Mock
+//}
 // ---End of fixture---//
 
 // Test 1: regular test

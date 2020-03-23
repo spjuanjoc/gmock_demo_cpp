@@ -21,6 +21,13 @@ set(SOURCES
 include_directories(Module)
 include_directories(Test/Module)
 
+#To compile with coverage
+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    message("System name: ${CMAKE_SYSTEM_NAME}")
+    # if( new flag = compile with coverage)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+endif()
+
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Link googletest with the current project
